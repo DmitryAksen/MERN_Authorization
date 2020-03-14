@@ -4,6 +4,23 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { combineReducers } from "redux";
+import authReducer from './reducers/authReducers'
+import errorReducer from "./reducers/errorReducers";
+
+
+//We’ll use combinedReducers from redux to combine our authReducer and errorReducer into one rootReducer
+
+
+export default combineReducers({
+    auth: authReducer,
+    errors: errorReducer
+  });
+
+
+
+
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
